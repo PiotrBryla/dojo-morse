@@ -14,6 +14,9 @@
 // L .-..          Y -.--
 // M --            Z --..
 
+// ...|---|..-.|..|.-    Sofia
+// .|..-|--.|.|-.|..|.-  Eugenia
+
 const morseCodeToLatinLetter = (morseChar) => {
   const map = {
     ".-": "A",
@@ -45,6 +48,11 @@ const morseCodeToLatinLetter = (morseChar) => {
   };
 
   return map[morseChar];
+};
+
+const convert = (morse) => {
+  const letters = morse.split("|");
+  return letters.map(morseCodeToLatinLetter).join("");
 };
 
 describe("Morse code to latin alphabet", () => {
@@ -81,4 +89,8 @@ describe("Morse code to latin alphabet", () => {
       expect(morseCodeToLatinLetter(morse)).toBe(latin);
     }
   );
+
+  it("should convert a Morse to English word", () => {
+    expect(convert("...|---|..-.|..|.-")).toBe("SOFIA");
+  });
 });
