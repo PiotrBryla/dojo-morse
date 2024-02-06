@@ -106,4 +106,8 @@ describe("Morse without pauses to English", () => {
   it("Should return E ", () => {
     expect(convert(".")).toBe("E");
   });
+
+  it("Should return T ", () => {
+    expect(convert("-")).toBe("T");
+  });
 });
