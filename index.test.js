@@ -89,9 +89,9 @@ describe("Morse code to latin alphabet", () => {
   );
 });
 
-describe("Word in Morse code to English", () => {
+describe("Word in Morse code with pauses (|) to English", () => {
   it("should convert a Morse to English word", () => {
-    expect(convert("...|---|..-.|..|.-")).toBe("SOFIA");
+    expect(convert("...|---|..-.|..|.-|")).toBe("SOFIA");
     expect(convert(".|..-|--.|.|-.|..|.-")).toBe("EUGENIA");
   });
 
