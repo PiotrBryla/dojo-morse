@@ -92,5 +92,6 @@ describe("Morse code to latin alphabet", () => {
 
   it("should convert a Morse to English word", () => {
     expect(convert("...|---|..-.|..|.-")).toBe("SOFIA");
+    expect(convert(".|..-|--.|.|-.|..|.-")).toBe("EUGENIA");
   });
 });
