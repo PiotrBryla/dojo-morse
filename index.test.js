@@ -50,8 +50,11 @@ const morseCodeToLatinLetter = (morseChar) => {
   return map[morseChar];
 };
 
-const convert = (morse = "") =>
-  morse.split("|").map(morseCodeToLatinLetter).join("");
+const convert = (morse = "") => {
+
+  return [morse.split("|").map(morseCodeToLatinLetter).join("")];
+
+}
 
 describe("Morse code to latin alphabet", () => {
   it.each([
@@ -91,12 +94,12 @@ describe("Morse code to latin alphabet", () => {
 
 describe("Word in Morse code with pauses (|) to English", () => {
   it("should convert a Morse to English word", () => {
-    expect(convert("...|---|..-.|..|.-|")).toBe("SOFIA");
-    expect(convert(".|..-|--.|.|-.|..|.-")).toBe("EUGENIA");
+    expect(convert("...|---|..-.|..|.-|")).toEqual(["SOFIA"]);
+    expect(convert(".|..-|--.|.|-.|..|.-")).toEqual(["EUGENIA"]);
   });
 
   it("should return an empty string when no arguments given", () => {
-    expect(convert()).toBe("");
+    expect(convert()).toEqual([""]);
   });
 
   it.todo("should do X when passed invalid input");
@@ -104,10 +107,10 @@ describe("Word in Morse code with pauses (|) to English", () => {
 
 describe("Morse without pauses to English", () => {
   it("Should return E ", () => {
-    expect(convert(".")).toBe("E");
+    expect(convert(".")).toEqual(["E"]);
   });
 
   it("Should return T ", () => {
-    expect(convert("-")).toBe("T");
+    expect(convert("-")).toEqual(["T"]);
   });
 });
