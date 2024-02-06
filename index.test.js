@@ -98,4 +98,6 @@ describe("Word in Morse code to English", () => {
   it("should return an empty string when no arguments given", () => {
     expect(convert()).toBe("");
   });
+
+  it.todo("should do X when passed invalid input");
 });
