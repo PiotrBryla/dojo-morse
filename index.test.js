@@ -101,3 +101,9 @@ describe("Word in Morse code with pauses (|) to English", () => {
 
   it.todo("should do X when passed invalid input");
 });
+
+describe("Morse without pauses to English", () => {
+  it("Should return E ", () => {
+    expect(convert(".")).toBe("E");
+  });
+});
