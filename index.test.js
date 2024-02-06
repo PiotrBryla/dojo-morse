@@ -50,10 +50,8 @@ const morseCodeToLatinLetter = (morseChar) => {
   return map[morseChar];
 };
 
-const convert = (morse) => {
-  const letters = morse.split("|");
-  return letters.map(morseCodeToLatinLetter).join("");
-};
+const convert = (morse = "") =>
+  morse.split("|").map(morseCodeToLatinLetter).join("");
 
 describe("Morse code to latin alphabet", () => {
   it.each([
@@ -89,9 +87,15 @@ describe("Morse code to latin alphabet", () => {
       expect(morseCodeToLatinLetter(morse)).toBe(latin);
     }
   );
+});
 
+describe("Word in Morse code to English", () => {
   it("should convert a Morse to English word", () => {
     expect(convert("...|---|..-.|..|.-")).toBe("SOFIA");
     expect(convert(".|..-|--.|.|-.|..|.-")).toBe("EUGENIA");
+  });
+
+  it("should return an empty string when no arguments given", () => {
+    expect(convert()).toBe("");
   });
 });
